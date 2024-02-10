@@ -335,9 +335,11 @@ header
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-.logo img{
+
+.logo img {
   width: 6vw;
 }
+
 .background-header .main-nav .logo {
   line-height: 75px;
 }
@@ -461,9 +463,11 @@ header
   padding-left: 25px;
   z-index: 1000;
 }
-.container{
+
+.container {
   height: fit-content;
 }
+
 .header-area .main-nav .nav li.submenu ul li a:hover:before {
   width: 3px;
 }
@@ -1842,11 +1846,19 @@ responsive
   -webkit-animation-delay: 0.66666s;
   animation-delay: 0.66666s;
 }
+
 @media (min-width:320px) and (max-width:1080px) {
-  .logo img{
+  .logo img {
     width: 5rem;
   }
 }
+
+@media (min-width:320px) and (max-width:455px) {
+ #top .left-content .inner-content h4 {
+    width: 300px;
+  }
+}
+
 @-webkit-keyframes jumper {
   0% {
     opacity: 0;
