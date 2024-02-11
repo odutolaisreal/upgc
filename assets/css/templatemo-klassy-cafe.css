@@ -1104,25 +1104,37 @@ menu
 }
 
 .card1 {
-  background-image: url(../images/DSC_8057.JPG.jpg);
+  background-image: url(../images/DSC_8049.JPG.jpg);
+  background-position: center;
 }
 
 .card2 {
-  background-image: url(../images/DSC_8057.JPG.jpg);
+  background-position: center;
+  background-image: url(../images/DSC_8060.JPG.jpg);
 }
 
 .card3 {
+  background-position: center;
   background-image: url(../images/DSC_8057.JPG.jpg);
 }
 
 .card4 {
+  background-position: center;
   background-image: url(../images/DSC_8057.JPG.jpg);
 }
 
 .card5 {
+  background-position: center;
   background-image: url(../images/DSC_8057.JPG.jpg);
 }
-
+.card8 {
+  background-position: center;
+  background-image: url(../images/DSC_8057.JPG.jpg);
+}
+.card10 {
+  background-position: center;
+  background-image: url(../images/DSC_8064.JPG.jpg);
+}
 .info {
   position: relative;
   width: 100%;
@@ -1526,6 +1538,18 @@ reservation
   color: #2a2a2a;
 }
 
+/* 
+---------------------------------------------
+donation
+---------------------------------------------
+*/
+/* .giving{
+  display: flex;
+  margin-top: 10%;
+}
+.giving .gift{
+  background-image: url(/assets/images/charity.png);
+} */
 /*
 ---------------------------------------------
 offers
@@ -1854,7 +1878,7 @@ responsive
 }
 
 @media (min-width:320px) and (max-width:455px) {
- #top .left-content .inner-content h4 {
+  #top .left-content .inner-content h4 {
     width: 300px;
   }
 }
