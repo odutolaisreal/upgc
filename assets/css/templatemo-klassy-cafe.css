@@ -816,8 +816,9 @@ banner
   min-height: 100%;
   min-width: 100%;
   position: relative;
+  width: 90px;
   display: inline-block;
-  max-width: none;
+  max-width: fit-content;
 }
 
 *,
@@ -1056,6 +1057,10 @@ about
   position: relative;
 }
 
+#about .right-content .thumb video {
+  width: 45vw;
+}
+
 #about .right-content .thumb a {
   position: absolute;
   left: 50%;
@@ -1104,37 +1109,45 @@ menu
 }
 
 .card1 {
-  background-image: url(../images/DSC_8049.JPG.jpg);
+  background-image: url(../images/p\ \(3\).jpg);
   background-position: center;
 }
 
 .card2 {
   background-position: center;
-  background-image: url(../images/DSC_8060.JPG.jpg);
+  background-image: url(../images/p\ \(5\).jpg);
 }
 
 .card3 {
   background-position: center;
-  background-image: url(../images/DSC_8057.JPG.jpg);
+  background-image: url(../images/p\ \(2\).JPG);
 }
 
 .card4 {
   background-position: center;
-  background-image: url(../images/DSC_8057.JPG.jpg);
+  background-image: url(../images/p\ \(6\).JPG);
 }
 
 .card5 {
   background-position: center;
-  background-image: url(../images/DSC_8057.JPG.jpg);
+  background-image: url(../images/Mr\ Afolabi.jpg);
 }
+
 .card8 {
   background-position: center;
-  background-image: url(../images/DSC_8057.JPG.jpg);
+  background-image: url(../images/p\ \(7\).jpg);
 }
+
+.card9 {
+  background-position: center;
+  background-image: url(../images/p\ \(1\).jpg);
+}
+
 .card10 {
   background-position: center;
-  background-image: url(../images/DSC_8064.JPG.jpg);
+  background-image: url(../images/p\ \(4\).JPG);
 }
+
 .info {
   position: relative;
   width: 100%;
@@ -1543,13 +1556,58 @@ reservation
 donation
 ---------------------------------------------
 */
-/* .giving{
-  display: flex;
-  margin-top: 10%;
+#donation {
+  background-image: url(../images/give.jpg);
+  width: fit-content;
+  background-repeat: no-repeat;
+  text-align: center;
+  align-items: center;
+  background-size: cover;
+  width: 100%;
+  height: 87vh;
+  margin-top: 20%;
+  /* background: rgba(0, 0, 0, 0.8); */
 }
-.giving .gift{
-  background-image: url(/assets/images/charity.png);
-} */
+
+.giving {
+  top: 7ex;
+  position: relative;
+}
+
+.giving img {
+  width: 100px;
+  align-items: center;
+}
+
+.giving p {
+  color: #fff;
+  margin-bottom: 4%;
+  font-weight: 900;
+  font-size: 75px;
+  width: 55%;
+  text-align: center;
+  margin-left: 20%;
+  line-height: 13vh;
+  margin-top: 3%;
+}
+
+.giving button {
+  outline: none;
+  background-color: blue;
+  padding: 2%;
+  color: #fff;
+  border-radius: 25px;
+  border: none;
+}
+
+.giving .dn:hover {
+  zoom: 1.1;
+}
+
+.cards {
+  display: flex;
+}
+
 /*
 ---------------------------------------------
 offers
@@ -1582,6 +1640,8 @@ offers
 
 #offers #tabs ul {
   padding: 0;
+  justify-content: center;
+  display: flex;
 }
 
 #offers #tabs ul li {
@@ -1611,6 +1671,7 @@ offers
 #offers #tabs ul li a img {
   display: block;
   margin: 0 auto 15px auto;
+  width: 50px;
 }
 
 #offers #tabs ul .ui-tabs-active a {
