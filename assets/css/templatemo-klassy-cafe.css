@@ -1562,6 +1562,7 @@ donation
   background-repeat: no-repeat;
   text-align: center;
   align-items: center;
+  background-position: center center;
   background-size: cover;
   width: 100%;
   height: 87vh;
@@ -1936,11 +1937,47 @@ responsive
   .logo img {
     width: 5rem;
   }
+
+  #about .right-content .thumb video {
+    width: 100%;
+    max-width:500%;
+  }
+
+  .giving p {
+    width: fit-content;
+    margin: 0;
+    font-size: 30px;
+    line-height: normal;
+  }
 }
 
 @media (min-width:320px) and (max-width:455px) {
   #top .left-content .inner-content h4 {
     width: 300px;
+  }
+}
+
+@media (min-width:420px) and (max-width:560px) {
+  .giving p {
+    font-size: 40px;
+  }
+}
+
+@media (min-width:561px) and (max-width:701px) {
+  .giving p {
+    font-size: 50px;
+  }
+}
+
+@media (min-width:702px) and (max-width:844px) {
+  .giving p {
+    font-size: 60px;
+  }
+}
+
+@media (min-width:845px) and (max-width:938px) {
+  .giving p {
+    font-size: 70px;
   }
 }
 
