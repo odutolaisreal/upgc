@@ -1120,7 +1120,7 @@ menu
 
 .card3 {
   background-position: center;
-  background-image: url(../images/p\ \(2\).JPG);
+  background-image: url(../images/pst_sunday.jpg);
 }
 
 .card4 {
@@ -1135,17 +1135,17 @@ menu
 
 .card8 {
   background-position: center;
-  background-image: url(../images/p\ \(7\).jpg);
+  background-image: url(../images/pst\ mary\ adeyeemo.JPG);
 }
 
 .card9 {
   background-position: center;
-  background-image: url(../images/p\ \(1\).jpg);
+  background-image: url(../images/pst\ adeyemo.JPG);
 }
 
 .card10 {
   background-position: center;
-  background-image: url(../images/p\ \(4\).JPG);
+  background-image: url(../images/pst\ anu.jpg);
 }
 
 .info {
@@ -1159,7 +1159,7 @@ menu
 
 .card:hover .info,
 .card:hover .info:before {
-  transform: translateY(200px) translateZ(0);
+  transform: translateY(250px) translateZ(0);
 }
 
 .title {
@@ -1940,7 +1940,7 @@ responsive
 
   #about .right-content .thumb video {
     width: 100%;
-    max-width:500%;
+    max-width: 500%;
   }
 
   .giving p {
@@ -1951,31 +1951,25 @@ responsive
   }
 }
 
-@media (min-width:320px) and (max-width:455px) {
-  #top .left-content .inner-content h4 {
-    width: 300px;
-  }
-}
-
 @media (min-width:420px) and (max-width:560px) {
   .giving p {
     font-size: 40px;
   }
 }
 
-@media (min-width:561px) and (max-width:701px) {
+@media (min-width:561px) and (max-width:700px) {
   .giving p {
     font-size: 50px;
   }
 }
 
-@media (min-width:702px) and (max-width:844px) {
+@media (min-width:701px) and (max-width:840px) {
   .giving p {
     font-size: 60px;
   }
 }
 
-@media (min-width:845px) and (max-width:938px) {
+@media (min-width:841px) and (max-width:980px) {
   .giving p {
     font-size: 70px;
   }
