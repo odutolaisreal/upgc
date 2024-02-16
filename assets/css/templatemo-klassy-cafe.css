@@ -778,11 +778,20 @@ banner
 }
 
 #top .left-content h4 {
-  font-family: 'Dancing Script', cursive;
-  color: #fff;
-  font-size: 54px;
+  font-family: 'poppins', cursive;
+  color: #fffdfd;
+  font-size: 64px;
   width: 220px;
-  font-weight: 700;
+  font-weight: 900;
+}
+
+#top .left-content h4 span {
+  font-family: 'poppins', cursive;
+  color: #fffdfd;
+  line-height: 0;
+  font-size: 25px;
+  width: 100px;
+  font-weight: 900;
 }
 
 #top .left-content h6 {
@@ -1464,6 +1473,10 @@ reservation
 #reservation .phone span a:hover,
 #reservation .message span a:hover {
   color: blue;
+}
+
+#reservation button #form-submit .main-button-icon  {
+  text-decoration: none;color: #fff;
 }
 
 #contact {
