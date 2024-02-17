@@ -1976,7 +1976,9 @@ responsive
   #top .left-content {
     height: 50vh;
   }
-
+.section-heading h2{
+  width: 26ex;
+}
   #top .left-content .inner-content h4 {
     margin-top: 5%;
     padding-top: 17%;
