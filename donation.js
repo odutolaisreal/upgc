@@ -10,9 +10,6 @@ function ba() {
 const form = document.getElementById("payForm");
 form.addEventListener("submit", payNow);
 
-function pay() {
-    var donation_amt = document.addEventListener("#donation_amt")
-}
 
 
 

@@ -23,73 +23,71 @@
                 </div>
             </div>
         </div>
-        <section class="form" id="frm">
-            <form action="" id="payForm" inputmode="required">
-                <div class="first">
-                    <div class="name">
-                        <label for="Name">
-                            Name
-                        </label>
-                        <input type="text" placeholder="Enter Your Name">
-                    </div>
-                    <div class="email">
-                        <label for="Email">
-                            Email
-                        </label>
-                        <input type="email" placeholder="enteryourmail@gmail.com" inputmode="email">
-                    </div>
-                </div>
-                <div class="second">
-                    <div class="number">
-                        <label for="number">
-                            Number
-                        </label>
-                        <input type="tel" placeholder="0701-234-5678" inputmode="tel">
-                    </div>
-                    <div class="country">
-                        <label for="country">
-                            Country
-                        </label>
-                        <select name="" id="">
-                            <option value="">Choose Country</option>
-                            <option value="">USA</option>
-                            <option value="">Canada</option>
-                            <option value="">Ghana</option>
-                            <option value="">South Africa</option>
-                            <option value="">Nigeria</option>
-                            <option value="">Austrailia</option>
-                            <option value="">Italy</option>
-                            <option value="">Netherlands</option>
-                            <option value="">Pakistan</option>
-                            <option value="">India</option>
-                            <option value="">Germany</option>
-                            <option value="">Phillipines</option>
-                            <option value="">Ivory Coast</option>
-                            <option value="">Abidjan</option>
-                            <option value="">United Kingdom</option>
-                            <option value="">Egypt</option>
-                            <option value="">Israel</option>
-                            <option value="">Dutch</option>
-                            <option value="">England</option>
-                            <option value="">Finland</option>
-                            <option value="">Japan</option>
-
-                        </select>
-                    </div>
-                </div>
-                <div class="third">
-                    <div class="city">
-                        <label for="Amount">
-                            Enter Amount
-                        </label>
-                        <input type="number" placeholder="Select Amount" inputmode="numeric" id="donation_amt">
-                    </div>
+        <div id="frm">
+            <form id="payForm">
+                <!-- details -->
+                <div class="form-control">
+                    <label for="name">
+                        Name
+                    </label>
+                    <input type="text" placeholder="Enter Your Name" required>
 
                 </div>
-                <button type="submit" id="start-payment-button" onclick="pay">Pay Now</button>
-                <!-- <div class="checkout_btn"><button>Submit</button></div> --> 
+                <div class="form-control">
+                    <label for="name">
+                        Email
+                    </label>
+                    <input type="email" placeholder="Enter Your Email" required>
+
+                </div>
+                <div class="form-control">
+                    <label for="phone number">
+                        Phone Number
+                    </label>
+                    <input type="tel" placeholder="Enter Your Phone Number" required>
+
+                </div>
+                <div class="form-control">
+                    <label for="country">
+                        Select Your Contry
+                    </label>
+                    <select name="" id="">
+                        <option value="">Choose Country</option>
+                        <option value="">USA</option>
+                        <option value="">Canada</option>
+                        <option value="">Ghana</option>
+                        <option value="">South Africa</option>
+                        <option value="">Nigeria</option>
+                        <option value="">Austrailia</option>
+                        <option value="">Italy</option>
+                        <option value="">Netherlands</option>
+                        <option value="">Pakistan</option>
+                        <option value="">India</option>
+                        <option value="">Germany</option>
+                        <option value="">Phillipines</option>
+                        <option value="">Ivory Coast</option>
+                        <option value="">Abidjan</option>
+                        <option value="">United Kingdom</option>
+                        <option value="">Egypt</option>
+                        <option value="">Israel</option>
+                        <option value="">Dutch</option>
+                        <option value="">England</option>
+                        <option value="">Finland</option>
+                        <option value="">Japan</option>
+
+                    </select>
+
+                </div>
+                <div class="form-control">
+                    <label for="Amount">
+                        Amount(NGN)
+                    </label>
+                    <input type="number" placeholder="Enter Amount" required id="donation_amt">
+
+                </div>
+                <button>SUBMIT</button>
             </form>
-        </section>
+        </div>
         <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay">
             <div>
                 Your Are Making a donation of <b>N2,000</b> to UPGC Ministries
@@ -98,7 +96,7 @@
             <input type="hidden" name="customer[email]" value="test@mailnator.com" />
             <input type="hidden" name="customer[name]" value="Ayomide Jimi-Oni" />
             <input type="hidden" name="tx_ref" value="txref-81123" />
-            <input type="hidden" name="amount" value="3000" />
+            <input type="hidden" name="amount" value="2000" />
             <input type="hidden" name="currency" value="NGN" />
             <input type="hidden" name="meta[source]" value="docs-html-test" />
             <br>
@@ -135,7 +133,7 @@
         }
 
         .bt img {
-            width: 30vw;
+            width: 40vw;
         }
 
         .bt.popUp {
@@ -160,16 +158,8 @@
             display: block;
             overflow: visible;
             visibility: visible;
-            box-shadow: 0px 15px 20px rgba(54, 24, 79, 0.5);
-            padding: 10px 20px 0 12px;
-            padding-bottom: 10%;
-            padding-top: 8%;
-            margin-top: 20px;
-            background: #00d2ff;
-            background: -webkit-linear-gradient(to left, #3a7bd5, #00d2ff);
-            background: linear-gradient(to left, #3a7bd5, #00d2ff);
             /* Thanks to uigradients :) */
-            width: fit-content;
+            width: 100vw;
             justify-content: center;
             align-items: center;
             text-align: center;
@@ -343,6 +333,71 @@
             #giving-section .payment h2 {
                 font-size: 30px;
             }
+        }
+    </style>
+    <style>
+        textarea {
+            resize: none;
+        }
+
+        button {
+            background-color: blue;
+            border: 1px solid blue;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            color: #fff;
+            margin-top: 50px;
+            margin-bottom: 20px;
+
+        }
+
+        form {
+            background: transparent;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px blue;
+        }
+
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .form-control label {
+            display: block;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .form-control::placeholder {
+            color: #000;
+            font-weight: 900;
+        }
+
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid blue;
+            border-radius: 5px;
+            font-family: inherit;
+            padding: 15px;
+            display: block;
+            width: 90%;
+        }
+
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline;
+            width: auto;
+
+        }
+
+        .form-control::placeholder {
+            color: #000
         }
     </style>
     <script src="./cart.js"></script>
