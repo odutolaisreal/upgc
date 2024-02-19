@@ -88,20 +88,88 @@
                 <button>SUBMIT</button>
             </form>
         </div>
-        <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay">
+        <style>
+            #start-payment-button {
+                cursor: pointer;
+                position: relative;
+                background-color: #ff9b00;
+                color: #12122c;
+                max-width: 30%;
+                padding: 7.5px 16px;
+                font-weight: 500;
+                font-size: 14px;
+                border-radius: 4px;
+                border: none;
+                transition: all .1s ease-in;
+                vertical-align: middle;
+            }
+        </style>
+        <form>
+            <div>
+                Your order is ₦2,500
+            </div>
+            <button type="button" id="start-payment-button" onclick="makePayment()">Pay Now</button>
+        </form>
+        <script>
+            function makePayment() {
+                FlutterwaveCheckout({
+                    public_key: "FLWPUBK_TEST-337d4e3e6c0c10c22b28cac389a35d46-X",
+                    tx_ref: "txref-DI0NzMx12",
+                    amount: 2500,
+                    currency: "NGN",
+                    payment_options: "card, banktransfer, ussd",
+                    meta: {
+                        source: "docs-inline-test",
+                        consumer_mac: "92a3-912ba-1192a",
+                    },
+                    customer: {
+                        email: "test@mailinator.com",
+                        phone_number: "08100000000",
+                        name: "Ayomide Jimi-Oni",
+                    },
+                    customizations: {
+                        title: "Flutterwave Developers",
+                        description: "Test Payment",
+                        logo: "https://checkout.flutterwave.com/assets/img/rave-logo.png",
+                    },
+                });
+            }
+            function makePayment() {
+                const modal = FlutterwaveCheckout({
+                    // ...
+                    callback: function (payment) {
+                        // Send AJAX verification request to backend
+                        verifyTransactionOnBackend(payment.id);
+                        modal.close();
+                    },
+                });
+            }
+            function makePayment() {
+                FlutterwaveCheckout({
+                    public_key: "FLWPUBK_TEST-SANDBOXDEMOKEY-X",
+                    // ...
+                    onclose: function (incomplete) {
+                        if (incomplete === true) {
+                            // Record event in analytics
+                        }
+                    }
+                });
+            }
+        </script>
+        <!-- <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay">
             <div>
                 Your Are Making a donation of <b>N2,000</b> to UPGC Ministries
             </div>
-            <input type="hidden" name="public_key" value="FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X" />
-            <input type="hidden" name="customer[email]" value="test@mailnator.com" />
-            <input type="hidden" name="customer[name]" value="Ayomide Jimi-Oni" />
+            <input type="hidden" name="public_key" value="FLWPUBK_TEST-878a97640fc55cccbf0f33f1c35fa41c-X" />
+            <input type="hidden" name="customer[email]" value="odutolaisreal11@gmail.com" />
+            <input type="hidden" name="customer[name]" value="Odutola Israel Ayomide" />
             <input type="hidden" name="tx_ref" value="txref-81123" />
             <input type="hidden" name="amount" value="2000" />
             <input type="hidden" name="currency" value="NGN" />
             <input type="hidden" name="meta[source]" value="docs-html-test" />
             <br>
             <button type="submit" id="start-payment-button">Pay Now</button>
-        </form>
+        </form> -->
         <div class="bt"><img src="./assets/images/1707608746604.jpg" alt="" class="btt"></div>
     </section>
     <style>
@@ -401,6 +469,7 @@
         }
     </style>
     <script src="./cart.js"></script>
+    <script src="https://checkout.flutterwave.com/v3.js"></script>
     <script src="./donation.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

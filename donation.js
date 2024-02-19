@@ -26,7 +26,7 @@ function pay(e) {
 
     var donation_amt = document.getElementById("donation_amt")
     FlutterwaveCheckout({
-        public_key: "FLWPUBK_TEST-66274efa295ca60299fd1bdad71a8625-X",
+        public_key: "FLWPUBK_TEST-878a97640fc55cccbf0f33f1c35fa41c-X",
         tx_ref: txRef,
         amount: donation_amt,
         currency: "NGN",
