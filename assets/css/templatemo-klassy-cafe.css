@@ -1947,6 +1947,14 @@ responsive
   animation-delay: 0.66666s;
 }
 
+@media (min-width:320px) and (max-width:938px) {
+
+  #chefs .section-heading h2 {
+    width: 100vw;
+    text-align: center;
+  }
+}
+
 @media (min-width:320px) and (max-width:1080px) {
   .logo img {
     width: 5rem;
@@ -1994,6 +2002,13 @@ responsive
 @media (min-width:561px) and (max-width:700px) {
   .giving p {
     font-size: 50px;
+  }
+}
+
+@media (min-width:320px) and (max-width:425px) {
+  #chefs .section-heading h2 {
+    width: 100vw;
+    text-align: center;
   }
 }
 
