@@ -24,11 +24,11 @@ form.addEventListener("submit", payNow);
 function pay(e) {
     e.preventdefault();
 
-    var donation_amt = document.getElementById("donation_amt")
+    var donation_amt = document.getElementById("donation_amt").value
     FlutterwaveCheckout({
         public_key: "FLWPUBK_TEST-878a97640fc55cccbf0f33f1c35fa41c-X",
         tx_ref: txRef,
-        amount: donation_amt,
+        amount: document.getElementById('donation_amt').value * 100,
         currency: "NGN",
         redirect_url: "http://127.0.0.1:5501/success.html",
         meta: {
