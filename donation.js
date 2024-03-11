@@ -5,63 +5,28 @@ function Dc() {
 function ba() {
     var togg = document.querySelector(".bt")
     togg.classList.toggle("popUp").style.display = "block"
-};
+}; const paymentForm = document.getElementById('paymentForm');
+paymentForm.addEventListener("submit", payWithPaystack, false);
 
-const form = document.getElementById("payForm");
-form.addEventListener("submit", payNow);
+function payWithPaystack(e) {
+    e.preventDefault();
 
-
-
-
-
-
-
-
-
-
-
-
-function pay(e) {
-    e.preventdefault();
-
-    var donation_amt = document.getElementById("donation_amt").value
-    FlutterwaveCheckout({
-        public_key: "FLWPUBK_TEST-878a97640fc55cccbf0f33f1c35fa41c-X",
-        tx_ref: txRef,
-        amount: document.getElementById('donation_amt').value * 100,
-        currency: "NGN",
-        redirect_url: "http://127.0.0.1:5501/success.html",
-        meta: {
-            address: address,
-            date: date,
+    let handler = PaystackPop.setup({
+        key: 'pk_live_e456367a0cf5e02eda98f17e5f514f1256b1747d', // Replace with your public key
+        email: document.getElementById("email-address").value,
+        amount: document.getElementById("amount").value * 100,
+        ref: '' + Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+        // label: "Optional string that replaces customer email"
+        onClose: function () {
+            alert('Window closed.');
         },
-
-
-
-
-        customer: {
-            email: email,
-            phone_number: phone,
-            name: name,
-
-
-        },
-        customizations: {
-            title: "UPGC Ministries",
-            description: "Payment for purchase",
-            logo: "http://127.0.0.1:5501/assets/images/UPGC%20LOGO.PNG",
-        },
-        onclose: function () { },
-        callback: function (data) {
-            const reference = data.tx_ref;
-            console.log("This is the data returned after a charge", data);
-            if (data.tx.chargedata == "00" || data.tx.chargedata == "0") {
-                window.location = "http://127.0.0.1:5501/success.html"
-                // redirect to a success page
-            } else {
-                window.location = "http://127.0.0.1:5501/failure.html"
-                // redirect to a failure page.
-            }
-        },
+        callback: function (response) {
+            let message = 'Payment complete! Reference: ' + response.reference;
+            alert(message);
+        }
     });
+
+    handler.openIframe();
 }
+
+

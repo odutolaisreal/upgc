@@ -24,34 +24,40 @@
             </div>
         </div>
         <div id="frm">
-            <form id="payForm">
-                <!-- details -->
-                <div class="form-control">
+            <form id="paymentForm">
+                <div class="form-group">
                     <label for="name">
                         Name
                     </label>
-                    <input type="text" placeholder="Enter Your Name" required>
+                    <input type="text" placeholder="Enter Your First Name" id="first-name" required>
 
                 </div>
-                <div class="form-control">
+                <div class="form-group">
+                    <label for="name">
+                        Last Name
+                    </label>
+                    <input type="text" placeholder="Enter Your Last Name" id="last-name" required>
+
+                </div>
+                <div class="form-group">
                     <label for="name">
                         Email
                     </label>
-                    <input type="email" placeholder="Enter Your Email" required>
+                    <input type="email" placeholder="Enter Your Email" id="email-address" required>
 
                 </div>
-                <div class="form-control">
+                <div class="form-group">
                     <label for="phone number">
                         Phone Number
                     </label>
-                    <input type="tel" placeholder="Enter Your Phone Number" required>
+                    <input type="tel" placeholder="Enter Your Phone Number" id="phone-number" required>
 
                 </div>
-                <div class="form-control">
+                <div class="form-group">
                     <label for="country">
                         Select Your Contry
                     </label>
-                    <select name="" id="">
+                    <select name="" id="country">
                         <option value="">Choose Country</option>
                         <option value="">USA</option>
                         <option value="">Canada</option>
@@ -78,98 +84,18 @@
                     </select>
 
                 </div>
-                <div class="form-control">
+                <div class="form-group">
                     <label for="Amount">
                         Amount(NGN)
                     </label>
-                    <input type="number" placeholder="Enter Amount" required id="donation_amt">
+                    <input type="tel" placeholder="Enter Amount" id="amount" required>
 
                 </div>
-                <button>SUBMIT</button>
+                <div class="form-submit">
+                    <button type="submit" onclick="payWithPaystack()"> Pay </button>
+                </div>
             </form>
         </div>
-        <style>
-            #start-payment-button {
-                cursor: pointer;
-                position: relative;
-                background-color: #ff9b00;
-                color: #12122c;
-                max-width: 30%;
-                padding: 7.5px 16px;
-                font-weight: 500;
-                font-size: 14px;
-                border-radius: 4px;
-                border: none;
-                transition: all .1s ease-in;
-                vertical-align: middle;
-            }
-        </style>
-        <form>
-            <div>
-                Your order is ₦2,500
-            </div>
-            <button type="button" id="start-payment-button" onclick="makePayment()">Pay Now</button>
-        </form>
-        <script>
-            function makePayment() {
-                FlutterwaveCheckout({
-                    public_key: "FLWPUBK_TEST-66274efa295ca60299fd1bdad71a8625-X",
-                    tx_ref: "txref-DI0NzMx12",
-                    amount: 2500,
-                    currency: "NGN",
-                    payment_options: "card, banktransfer, ussd",
-                    meta: {
-                        source: "docs-inline-test",
-                        consumer_mac: "92a3-912ba-1192a",
-                    },
-                    customer: {
-                        email: "test@mailinator.com",
-                        phone_number: "08100000000",
-                        name: "Ayomide Jimi-Oni",
-                    },
-                    customizations: {
-                        title: "Flutterwave Developers",
-                        description: "Test Payment",
-                        logo: "https://checkout.flutterwave.com/assets/img/rave-logo.png",
-                    },
-                });
-            }
-            function makePayment() {
-                const modal = FlutterwaveCheckout({
-                    // ...
-                    callback: function (payment) {
-                        // Send AJAX verification request to backend
-                        verifyTransactionOnBackend(payment.id);
-                        modal.close();
-                    },
-                });
-            }
-            function makePayment() {
-                FlutterwaveCheckout({
-                    public_key: "FLWPUBK_TEST-66274efa295ca60299fd1bdad71a8625-X",
-                    // ...
-                    onclose: function (incomplete) {
-                        if (incomplete === true) {
-                            // Record event in analytics
-                        }
-                    }
-                });
-            }
-        </script>
-        <!-- <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay">
-            <div>
-                Your Are Making a donation of <b>N2,000</b> to UPGC Ministries
-            </div>
-            <input type="hidden" name="public_key" value="FLWPUBK_TEST-878a97640fc55cccbf0f33f1c35fa41c-X" />
-            <input type="hidden" name="customer[email]" value="odutolaisreal11@gmail.com" />
-            <input type="hidden" name="customer[name]" value="Odutola Israel Ayomide" />
-            <input type="hidden" name="tx_ref" value="txref-81123" />
-            <input type="hidden" name="amount" value="2000" />
-            <input type="hidden" name="currency" value="NGN" />
-            <input type="hidden" name="meta[source]" value="docs-html-test" />
-            <br>
-            <button type="submit" id="start-payment-button">Pay Now</button>
-        </form> -->
         <div class="bt"><img src="./assets/images/1707608746604.jpg" alt="" class="btt"></div>
     </section>
     <style>
@@ -344,28 +270,6 @@
             gap: 3rem;
         }
 
-        .checkout_btn {
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .checkout_btn button {
-            background-color: #fff;
-            color: blue;
-            outline: none;
-            border: none;
-            padding: 2%;
-            border-radius: 25px;
-            width: 20vw;
-            margin-top: 20px;
-        }
-
-        .checkout_btn button:hover {
-            background-color: blue;
-            color: white;
-        }
-
         @media (min-width:320px) and (max-width:768px) {
             .bt img {
                 min-width: 307px;
@@ -408,7 +312,7 @@
             resize: none;
         }
 
-        button {
+        .form-submit button {
             background-color: blue;
             border: 1px solid blue;
             border-radius: 5px;
@@ -430,25 +334,25 @@
             box-shadow: 2px 5px 10px blue;
         }
 
-        .form-control {
+        .form-group {
             text-align: left;
             margin-bottom: 25px;
         }
 
-        .form-control label {
+        .form-group label {
             display: block;
             color: #000;
             margin-bottom: 10px;
         }
 
-        .form-control::placeholder {
+        .form-group::placeholder {
             color: #000;
             font-weight: 900;
         }
 
-        .form-control input,
-        .form-control select,
-        .form-control textarea {
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             border: 1px solid blue;
             border-radius: 5px;
             font-family: inherit;
@@ -457,23 +361,19 @@
             width: 90%;
         }
 
-        .form-control input[type="radio"],
-        .form-control input[type="checkbox"] {
+        .form-group input[type="radio"],
+        .form-group input[type="checkbox"] {
             display: inline;
             width: auto;
 
         }
 
-        .form-control::placeholder {
+        .form-group::placeholder {
             color: #000
         }
     </style>
-    <script src="./cart.js"></script>
-    <script src="https://checkout.flutterwave.com/v3.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
     <script src="./donation.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>
