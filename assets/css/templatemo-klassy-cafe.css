@@ -1429,6 +1429,7 @@ reservation
 
 #reservation {
   margin-top: 120px;
+  background: rgba(0, 0, 0, 0.15);
   padding: 120px 0px;
   background-image: url(../images/1-1.jpg);
   background-position: center center;
