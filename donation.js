@@ -7,7 +7,6 @@ function ba() {
     togg.classList.toggle("popUp").style.display = "block"
 }; const paymentForm = document.getElementById('paymentForm');
 paymentForm.addEventListener("submit", payWithPaystack, false);
-
 function payWithPaystack(e) {
     e.preventDefault();
 
